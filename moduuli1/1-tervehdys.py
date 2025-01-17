@@ -1,1 +1,1 @@
-print("Terve, Arska")1
+print("Terve, Arska")
