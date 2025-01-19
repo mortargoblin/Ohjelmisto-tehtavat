@@ -9,10 +9,10 @@ def calc_pi(points):
     from random import uniform
     from math import pi
 
-    # tässä kohtaa arvotaan pisteiden sijainnit ja lasketaan osumat
+    # Tässä kohtaa arvotaan pisteiden sijainnit ja lasketaan osumat
     # 
-    # voisin myös käyttää while looppia tässä, mutta mielestäni for loop
-    # oli järkevämpi
+    # Voisin myös käyttää while looppia tässä, mutta mielestäni for loop
+    # oli järkevämpi. While loopilla tarvitsisin turhan variablen lisää.
     hit = 0
     for _ in range(points):
         x = uniform(-1,1)
