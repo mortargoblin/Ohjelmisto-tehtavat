@@ -18,6 +18,7 @@ def calc_pi(points):
             hit += 1
         else:
             pass
+    # palauta piin arvo osumien perusteella
     return 4 * hit / points
 
 main()
