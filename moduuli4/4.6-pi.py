@@ -10,6 +10,9 @@ def calc_pi(points):
     from math import pi
 
     # tässä kohtaa arvotaan pisteiden sijainnit ja lasketaan osumat
+    # 
+    # voisin myös käyttää while looppia tässä, mutta mielestäni for loop
+    # oli järkevämpi
     hit = 0
     for _ in range(points):
         x = uniform(-1,1)
