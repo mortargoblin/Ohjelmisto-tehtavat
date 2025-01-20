@@ -1,3 +1,4 @@
 print("enter name")
 name = input("> ")
-print("Hello,", name)
+# title string method tässä, jotta ohjelma olisi entistä parempi
+print("Hello,", name.title())

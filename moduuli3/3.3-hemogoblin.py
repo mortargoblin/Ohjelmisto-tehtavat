@@ -6,7 +6,6 @@ sex = input("> ")
 # check correct sex choice
 if sex.lower() != "m" and sex.lower() != "f":
     print("sex not M or F")
-    exit()
 else:
     print("Enter hemogoblin value (g/l)")
     goblin = float(input("> "))
