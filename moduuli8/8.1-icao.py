@@ -14,14 +14,14 @@ def main():
     
     print("Anna ICAO-koodi")
     icao = input("> ")
-    hae_nimi(yhteys, icao)
+    print(hae_nimi(yhteys, icao))
 
 def hae_nimi(yhteys, koodi):
     sql = f"SELECT name FROM airport where ident='{koodi}'"
     kursori = yhteys.cursor()
     kursori.execute(sql)
     tulos = kursori.fetchone()
-    if kursori.rowcount > 0:
-        print(tulos[0])
+    if kursori.rowcount >0:
+        return tulos[0]
 
 main()
