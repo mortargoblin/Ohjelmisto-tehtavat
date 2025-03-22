@@ -1,4 +1,4 @@
-# Talo.py
+# palohaly.py
 
 class Hissi:
     def __init__(self, alin, ylin, kerros=0):
@@ -16,15 +16,14 @@ class Hissi:
 
     def kerros_ylos(self):
         self.kerros += 1
-        print(self.kerros, end=" ")
+        print(self.kerros)
 
     def kerros_alas(self):
         self.kerros -= 1
-        print(self.kerros, end=" ")
+        print(self.kerros)
 
 class Talo:
     hissit_lst = []
-    
     def __init__(self, alin, ylin, hissit_lkm):
         self.alin = alin
         self.ylin = ylin
@@ -36,14 +35,24 @@ class Talo:
     def aja_hissia(self, hissi, kohde):
         self.hissit_lst[hissi-1].siirry_kerrokseen(kohde)
 
+    def palohalytys(self):
+        print("Palohalytys")
+        for hissi in self.hissit_lst:
+            hissi.siirry_kerrokseen(self.alin)
+
 # Pääohjelma
 
 t = Talo(0, 6, 3)
 
 t.aja_hissia(1, 4)
 
-print("\nHissit:")
 index = 1
+for hissi in Talo.hissit_lst:
+    print(f"Hissi {index} - kerros: {hissi.kerros}")
+    index += 1
+
+t.palohalytys()
+
 for hissi in Talo.hissit_lst:
     print(f"Hissi {index} - kerros: {hissi.kerros}")
     index += 1
