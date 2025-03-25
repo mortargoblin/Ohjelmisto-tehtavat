@@ -3,16 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <title>Firma</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.png">
 </head>
 <body>
   <div class="bg-container">
-    <div class="fg-container">
-      <div class="top-bar">
+    <div class="top-bar">
+    <!-- Ikoni -->
+      <div>
+        <img alt="logo" id="logo" src="logo-1.png" style="height:60px;">
       </div>
-      <div class="content">
-        <h1>Header</h1>
+    
+    <!-- Menu -->
+      <div class="menu">
+        <div>
+          <a href="index.html">Home</a>
+        </div>
+        <div>
+          <a href="#products">Products</a>
+        </div>
+        <div>
+          <a href="#contact">Contact</a>
+        </div>
       </div>
     </div>
+    <div class="content">
+      <div class="header"> 
+        <!-- Otsikko ja kuva -->
+        <h1>Amazing Title for Company</h1>
+        <img alt="banner" id="banner" src="krh-banner.png">
+      </div>
+      <div>
+        <!-- Paragraaffi -->
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et nisl nec magna molestie bibendum id sit amet turpis. Nullam egestas erat ut arcu accumsan efficitur. Suspendisse ornare non justo eget pharetra. Curabitur ornare, neque in lobortis porta, magna ligula auctor leo, ut mattis felis lorem non enim. Maecenas pellentesque eget quam ac mollis. Mauris vel imperdiet neque. Suspendisse sed sem in dui blandit semper sed ut leo. Vestibulum vel lorem ut enim tristique tincidunt sit amet non quam. Morbi tristique quam nisl, sit amet congue mauris ornare nec.
+        </p>
+      </div>
+      <hr>
+      <div id="products">
+        <h1>Our products</h1>
+        <div class="flex-container">
+          <div class="product">
+            <img alt="product 1" class="product-img" src="product-1.png">
+            <h2>Item-1</h2>
+            <p> Enticing and lenghty description detailing the product and why you specifically should buy it. </p>
+          </div>
+          <div class="product">
+            <img alt="product 2" class="product-img" src="product-2.png">
+            <h2>Item-2</h2>
+             <p> Enticing and lenghty description detailing the product and why you specifically should buy it. </p>
+          </div>
+          <div class="product">
+            <img alt="product 3" class="product-img" src="product-3.png">
+            <h2>Item-3</h2>
+            <p> Enticing and lenghty description detailing the product and why you specifically should buy it. </p>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div id="contact">
+        <div class="flex-container">
+          <div id="contact-info">
+            <h1>Contact us</h1>
+            <p>
+              Visit us at:<br />
+              Companyname<br />
+              Retkeilijänkatu 6000<br />
+              00980 Helsinki<br />
+              Finland<br /> <br />
+              Email:<br /> company@company.fi<br /> <br/>
+              Phone:<br /> 1800-company-phone-num
+            </p>
+          </div>
+          <div>
+            <img alt="map" id="map" src="map.png">
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <footer>
+       copyright© 2025 &nbsp;| &nbsp;Footer info here...&nbsp;&nbsp;|&nbsp; Phone number &nbsp;|&nbsp; company@company.fi &nbsp;
+    </footer>
   </div>
 </body>
 </html>
