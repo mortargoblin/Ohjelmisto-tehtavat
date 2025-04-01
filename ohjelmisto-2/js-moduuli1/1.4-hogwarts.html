@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>tehtävä</title>
+    <style>
+      body {
+        font-family: Arial;
+        text-align: center;
+      }
+      p {
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="/">back</a> 
+    <h1 id="filename"></h1>
+    <p id="output"></p>
+    <script>
+      // Perusta
+      const path = window.URL.parse(window.location.href).pathname;
+      const filename = path.substring(path.lastIndexOf('/') + 1);
+      document.title = filename;
+      document.getElementById('filename').innerHTML = filename;
+
+      // Tehtävä
+      const name = prompt('Name: ');
+      const choise = Math.floor(Math.random() * 4);
+      // Tehtävänannossa väitettiin, että if else if... -rakenne olisi tarpeellinen...
+      const houses = ['Gryffindor', 'Slytherin', 'Hufflepuff', 'Ravenclaw'];
+      document.getElementById('output').innerHTML = name + ', you are ' + houses[choise] + '.';
+
+    </script>
+  </body>
+</html>

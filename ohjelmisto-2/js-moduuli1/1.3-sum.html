@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>tehtävä</title>
+    <style>
+      body {
+        font-family: Arial;
+        text-align: center;
+      }
+      p {
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="/">back</a> 
+    <h1 id="filename"></h1>
+    <p id="output"></p>
+    <script>
+      // Perusta
+      const path = window.URL.parse(window.location.href).pathname;
+      const filename = path.substring(path.lastIndexOf('/') + 1);
+      document.title = filename;
+      document.getElementById('filename').innerHTML = filename;
+
+      // Tehtävä
+      let num1 = parseInt(prompt('Enter number'));
+      let num2 = parseInt(prompt('Enter number'));
+      let num3 = parseInt(prompt('Enter number'));
+      document.getElementById('output').innerHTML = 'Sum: ' + (num1+num2+num3)
+      + '<br /> Product: ' + (num1*num2*num3) + '<br /> Average: ' + (num1+num2+num3)/3;
+
+    </script>
+  </body>
+</html>

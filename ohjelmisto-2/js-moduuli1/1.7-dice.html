@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>tehtävä</title>
+    <style>
+      body {
+        font-family: Arial;
+        text-align: center;
+      }
+      p {
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="/">back</a> 
+    <h1 id="filename"></h1>
+    <p id="output"></p>
+    <script>
+      // Perusta
+      const path = window.URL.parse(window.location.href).pathname;
+      const filename = path.substring(path.lastIndexOf('/') + 1);
+      document.title = filename;
+      document.getElementById('filename').innerHTML = filename;
+
+      // Tehtävä
+      function diceThrow(num) {
+        for (let i = 1; i <= num; i++)
+          console.log(i)
+      }
+      
+      document.getElementById('output').innerHTML = diceThrow(6)
+
+    </script>
+  </body>
+</html>

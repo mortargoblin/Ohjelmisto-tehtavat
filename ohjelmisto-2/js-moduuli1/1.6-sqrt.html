@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>tehtävä</title>
+    <style>
+      body {
+        font-family: Arial;
+        text-align: center;
+      }
+      p {
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="/">back</a> 
+    <h1 id="filename"></h1>
+    <p id="output"></p>
+    <script>
+      // Perusta
+      const path = window.URL.parse(window.location.href).pathname;
+      const filename = path.substring(path.lastIndexOf('/') + 1);
+      document.title = filename;
+      document.getElementById('filename').innerHTML = filename;
+
+      // Tehtävä
+      if (confirm('Should I calculate the square root?')) {
+        const num = parseFloat(prompt('Enter number'));
+        if (num >= 0) {
+          document.getElementById('output').innerHTML = Math.sqrt(num)
+        }
+        else {
+          document.getElementById('output').innerHTML = 
+          'The square root of a negative number is not defined'
+        }
+      }
+    </script>
+  </body>
+</html>
