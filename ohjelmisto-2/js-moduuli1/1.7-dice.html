@@ -15,10 +15,10 @@
     </style>
   </head>
   <body>
-    <a href="/">back</a> 
+    <a href=".">back</a> 
     <h1 id="filename"></h1>
     <p id="output"></p>
-    <script>
+    <script defer>
       // Perusta
       const path = window.URL.parse(window.location.href).pathname;
       const filename = path.substring(path.lastIndexOf('/') + 1);
@@ -27,11 +27,17 @@
 
       // Tehtävä
       function diceThrow(num) {
-        for (let i = 1; i <= num; i++)
-          console.log(i);
+        let result = 0;
+        for (let i = 1; i <= num; i++) {
+          let diceThrow = Math.floor(Math.random() * 6 + 1);
+          result += diceThrow;
+          console.log(`die ${i} : ${diceThrow}`)
+        }
+        console.log('result: ' + result)
+        return result;
       }
       
-      document.getElementById('output').innerHTML = diceThrow(6)
+      document.getElementById('output').innerHTML = diceThrow(prompt('Enter number of dice throws'))
 
     </script>
   </body>

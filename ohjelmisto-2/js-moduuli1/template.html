@@ -22,6 +22,7 @@
       // Perusta
       const path = window.URL.parse(window.location.href).pathname;
       const filename = path.substring(path.lastIndexOf('/') + 1);
+      const output = document.getElementById('output');
       document.title = filename;
       document.getElementById('filename').innerHTML = filename;
 

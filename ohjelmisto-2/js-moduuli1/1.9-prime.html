@@ -22,25 +22,26 @@
       // Perusta
       const path = window.URL.parse(window.location.href).pathname;
       const filename = path.substring(path.lastIndexOf('/') + 1);
+      const output = document.getElementById('output')
       document.title = filename;
       document.getElementById('filename').innerHTML = filename;
 
+   
       // Tehtävä
-      function isLeap(year) {
-        if (year % 4 === 0) {
-          if (year % 100 === 0 && year % 400 !== 0) {} 
-          else {
-            return true;
-          }
-        }
+      function isPrime(num) {
+        if (Number(num) !== num || num < 1) { return false; }
+        for (let i = 2; i <= num - 1; i++) {
+          if (num % i == 0) {
+            return false;
+        }}
+        return true;
       }
-      const year = prompt('Enter year')
-      if (isLeap(year) === true) {
-        document.getElementById('output').innerHTML = `The year ${year} is a leap year.`;
+      let num = prompt('Enter number to determine if it\'s a prime number.')
+      if (isPrime(num)) {
+        output.innerHTML = `Number ${num} is a prime number!`
       } else {
-        document.getElementById('output').innerHTML = `The year ${year} is not a leap year.`;
+        output.innerHTML = `Number ${num} is NOT a prime number!`
       }
-
     </script>
   </body>
 </html>
