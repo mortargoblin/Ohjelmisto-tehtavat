@@ -27,6 +27,10 @@
       document.getElementById('filename').innerHTML = filename;
 
       // Tehtävä
+      // tajusin vasta myöhemmin että tämän ei kuuluisi järjestää
+      // lista numeraaliseen järjestykseen, vaan kääntää se ympäri...
+      // Tässä on nyt tekemäni bubble-sort -tyylinen algoritmi
+      // sen sijaan
       function reverseArray(arr) {
         for (let o = 0; o < arr.length; o++) {
           for (let i = 0; i < arr.length - o - 1; i++) {
