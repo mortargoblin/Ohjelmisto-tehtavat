@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>tehtävä</title>
+    <style>
+      body {
+        font-family: Arial;
+        text-align: center;
+      }
+      p {
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href=".">back</a> 
+    <h1 id="filename"></h1>
+    <p id="output"></p>
+    <script>
+      // Perusta
+      const path = window.URL.parse(window.location.href).pathname;
+      const filename = path.substring(path.lastIndexOf('/') + 1);
+      const output = document.getElementById('output');
+      document.title = filename;
+      document.getElementById('filename').innerHTML = filename;
+
+      // Tehtävä
+      // oma bubble sort :DDD
+      function reverseArray(arr) {
+        for (let o = 0; o < arr.length; o++) {
+          for (let i = 0; i < arr.length - o - 1; i++) {
+            if (arr[i] < arr[i+1]) {
+              let current = arr[i];
+              let next = arr[i+1];
+              arr[i+1] = current;
+              arr[i] = next;
+        }}}
+        return arr;
+      }
+      function getInput() {
+        let arr = [];
+        while (true) {
+          let current = parseInt(prompt('Enter number, enter 0 when finished'));
+          if (current === 0) { return arr; }
+          if (Number(current) === current) { arr.push(current); }
+        }
+      }
+      const result = reverseArray(getInput());
+      console.log('Result: ' + result);
+      output.innerHTML = result;
+
+    </script>
+  </body>
+</html>

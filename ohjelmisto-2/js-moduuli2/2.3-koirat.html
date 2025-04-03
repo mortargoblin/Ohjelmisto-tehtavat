@@ -8,6 +8,8 @@
       body {
         font-family: Arial;
         text-align: center;
+        margin: auto;
+        max-width: 350px;
       }
       p {
         font-size: 30px;
@@ -17,7 +19,7 @@
   <body>
     <a href=".">back</a> 
     <h1 id="filename"></h1>
-    <p id="output"></p>
+    <ul id="output"></ul>
     <script>
       // Perusta
       const path = window.URL.parse(window.location.href).pathname;
@@ -27,7 +29,18 @@
       document.getElementById('filename').innerHTML = filename;
 
       // Tehtävä
-
+      const numDogs = 6;
+      let dogs = [];
+      for (let i = 0; i < numDogs; i++) {
+        let dog = prompt('Name of dog ' + (i + 1));
+        dogs.push(dog);
+      }
+      for (let i = 0; i < dogs.length; i++) {
+        let newLi = document.createElement('li');
+        let currentDog = dogs.sort().reverse()[i];
+        newLi.appendChild(document.createTextNode(currentDog));
+        document.getElementById('output').appendChild(newLi);
+      }
     </script>
   </body>
 </html>

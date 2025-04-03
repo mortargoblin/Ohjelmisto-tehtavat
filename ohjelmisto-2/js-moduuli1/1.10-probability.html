@@ -27,6 +27,25 @@
       document.getElementById('filename').innerHTML = filename;
 
       // Tehtävä
+      function diceThrow(num) {
+        let result = 0;
+        for (let i = 1; i <= num; i++) {
+          let diceThrow = Math.floor(Math.random() * 6 + 1);
+          result += diceThrow;
+        }
+        return result;
+      }
+      const numDice = parseInt(prompt('Enter number of dice'));
+      const numThrow = 10000;
+      const target = parseInt(prompt('Enter desired outcome'));
+      let hit = 0;
+      for (let i = 0; i < numThrow; i++ ) {
+        if (diceThrow(numDice) === target) {
+          hit += 1;
+        }
+      }
+      const probability = (hit / numThrow * 100).toFixed(2);
+      output.innerHTML = `Likelyhood ≈ ${probability}%`;
 
     </script>
   </body>
