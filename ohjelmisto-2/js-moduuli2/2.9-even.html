@@ -17,7 +17,7 @@
   <body>
     <a href=".">back</a> 
     <h1 id="filename"></h1>
-    <p id="output"></p>
+    <p id="output">output in console</p>
     <script>
       // Perusta
       const path = window.URL.parse(window.location.href).pathname;
@@ -28,8 +28,17 @@
 
       // Tehtävä
       function even(arr) {
-        for (let )
+        let result = []; 
+        for (let i of arr) {
+          if (i % 2 === 0) {
+            result.push(i);
+          }
+        }
+        return result;
       }
+      const numbers = [1,2,3,4,5,6,7,200,50,51];
+      console.log('numbers: '+numbers);
+      console.log('even numbers: '+even(numbers));
     </script>
   </body>
 </html>

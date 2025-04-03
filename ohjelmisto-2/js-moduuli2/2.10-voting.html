@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>tehtävä</title>
+    <style>
+      body {
+        font-family: Arial;
+        text-align: center;
+      }
+      p {
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href=".">back</a> 
+    <h1 id="filename"></h1>
+    <p id="output"></p>
+    <script>
+      // Perusta
+      const path = window.URL.parse(window.location.href).pathname;
+      const filename = path.substring(path.lastIndexOf('/') + 1);
+      const output = document.getElementById('output');
+      document.title = filename;
+      document.getElementById('filename').innerHTML = filename;
+
+      // Tehtävä
+      const numberOfCandidates = parseInt(prompt('Enter number of candidates'));
+      const candidates = [];
+      for (let i = 0; i < numberOfCandidates; i++) {
+        let name = prompt('Name for candidate ' + (i+1));
+        candidates.push({name: name, votes: 0});
+      }
+      const voters = parseInt(prompt('Number of voters'));
+      for (let i = 0; i < voters; i++) {
+        let vote = prompt(`Voter ${i+1}, enter name of preferred candidate`);
+        for (let can of candidates) {
+          if (vote.toLowerCase() === can.name.toLowerCase()) {
+            can.votes += 1;
+          }
+        }
+      }
+      candidates.sort((a, b) => b.votes - a.votes);
+      let result = "";
+      for (let can of candidates) {
+        result += `${can.name}: ${can.votes} votes.\n`;
+      }
+      output.innerHTML = 'result in console.. but also here: <br />'+ result;
+      console.log(result);
+
+    </script>
+  </body>
+</html>
