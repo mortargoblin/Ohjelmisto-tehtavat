@@ -5,8 +5,6 @@ import json
 app = Flask(__name__)
 @app.route("/kentta/<icao>")
 
-
-
 def get_airport(icao):
     yhteys = mysql.connector.connect (
         host='127.0.0.1',

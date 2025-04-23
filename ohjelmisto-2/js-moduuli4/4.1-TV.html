@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>TV</title>
+</head>
+
+<body>
+  <form id="search">
+    <input id="query" name="q" type="text">
+    <input type="submit" value="Search">
+  </form>
+
+  <script>
+    'use strict'
+    
+    document.querySelector('#search').addEventListener('submit', async function(evt){
+
+      const query = document.querySelector('input[id=query]').value;
+    });
+
+
+  </script>
+</body>
+
+</html>
