@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>TV</title>
+
+  <style>
+    img {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <form id="search">
+    <input id="query" name="q" type="text">
+    <input type="submit" value="Search">
+  </form>
+
+  <div id='output' />
+
+  <script>
+    'use strict'
+    
+    document.querySelector('#search').addEventListener('submit', async function(evt){
+      evt.preventDefault();
+      document.querySelector('#output').innerHTML = '';
+
+      let query = document.querySelector('input[id=query]').value;
+
+      let response = await fetch(`https://api.tvmaze.com/search/shows?q=${query}`);
+      response = await response.json();
+
+      console.log( response );
+      response.forEach(function(item) {
+        console.log(':DD');
+        console.log(item.show.name);
+
+        const h2 = document.createElement('h2');
+        const link = document.createElement('a');
+        const img = document.createElement('img');
+        const div = document.createElement('div');
+        
+        h2.textContent = item.show.name;
+        link.textContent = item.show.url;
+        link.href = item.show.url;
+        link.target = '_blank';
+        img.src = item.show.image?.medium;
+        img.alt = item.show.name;
+        div.innerHTML = item.show.summary; // unsanitized, unbothered :D
+        
+        const article = document.createElement('article');
+        article.append( h2, img, link, div );
+
+        document.querySelector('#output').append(article);
+      
+      });
+    });
+
+  </script>
+</body>
+
+</html>

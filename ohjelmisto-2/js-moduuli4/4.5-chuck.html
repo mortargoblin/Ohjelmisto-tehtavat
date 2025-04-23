@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>TV</title>
+</head>
+
+<body>
+  
+  <button> Click Me! </button>
+  <p> output in console </p>
+
+  <script>
+    'use strict'
+
+    const btn = document.querySelector('button');
+    btn.addEventListener('click', async function(evt) {
+      let joke = await fetch('https://api.chucknorris.io/jokes/random');
+      joke = await joke.json();
+      console.log(joke.value);
+    });
+
+  </script>
+
+</body>
+
+</html>
